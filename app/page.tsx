@@ -126,7 +126,7 @@ export default function Home() {
         <nav id="nav-menu" className={menuOpen ? "open" : undefined}>
           <ul>
             <li><a href="https://rmtutoringservices.com">Home</a></li>
-            <li><a href="https://scheduling.rmtutoringservices.com">Scheduling</a></li>
+            <li><a href="https://cal.com/rleemiller">Scheduling</a></li>
             <li><a href="https://packages.rmtutoringservices.com">Packages</a></li>
             <li><a href="https://student.rmtutoringservices.com">Dashboard</a></li>
             <li><a href="https://rmtutoringservices.com/pages/about.html">About</a></li>
