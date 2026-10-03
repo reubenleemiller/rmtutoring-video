@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # These values are intentionally public and may appear in the client bundle.
+  # Do not add service-role keys or API secrets here.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_APP_URL,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_DASHBOARD_SUPABASE_URL,NEXT_PUBLIC_DASHBOARD_SUPABASE_ANON_KEY,NEXT_PUBLIC_STUDENT_DASHBOARD_URL,DAILY_DEMO_ROOM_URL"
+
+[dev]
+  command = "npm run dev"
+  port = 8888
+  targetPort = 3000
+  framework = "#auto"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(self), microphone=(self), fullscreen=(self), display-capture=(self)"
+
+[functions."cleanup"]
+  schedule = "@hourly"
+
+[functions."reminders"]
+  schedule = "@hourly"

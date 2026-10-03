@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env
+.env*.local
+*.log
+coverage
+
+# Local Netlify folder
+.netlify
+deno.lock
